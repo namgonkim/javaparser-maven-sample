@@ -144,9 +144,9 @@ public class MethodService {
         String varName = "";
         int argumentIndex = 1;
 
-        if(((MethodCallExpr) node).getScope().get().isNameExpr()) {
-            varName = ((MethodCallExpr) node).getScope().get().toString();
-        }
+//        if(((MethodCallExpr) node).getScope().get().isNameExpr()) {
+//            varName = ((MethodCallExpr) node).getScope().get().toString();
+//        }
 
         for(Node childNode : childNodes) {
             String childNodeTypeName = childNode.getMetaModel().getTypeName();

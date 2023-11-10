@@ -43,39 +43,39 @@ public class ProjectParser {
                     String fileName = cu.getStorage().get().getFileName();
 
 //                    // 전체 다해보기
-//                    System.out.println("File: [" + cu.getStorage().get().getPath() + "]");
-//                    convertService.visit(cu);
+                    System.out.println("File: [" + cu.getStorage().get().getPath() + "]");
+                    convertService.visit(cu);
 
                     // 부분만 해보기
-                    if(fileName.equals("Game.java") || fileName.equals("Judgement.java") || fileName.equals("Computer.java")) {
-//                    if( fileName.equals("RandomNumberGenerator.java") ||
-//                            fileName.equals("NumberGenerator.java") || fileName.equals("FixedNumberGenerator.java")) {
-                        System.out.println("File: [" + cu.getStorage().get().getPath() + "]");
-                        convertService.visit(cu);
-                    }
+//                    if(fileName.equals("SimpleService.java") || fileName.equals("Judgement.java") || fileName.equals("Computer.java")) {
+////                    if( fileName.equals("RandomNumberGenerator.java") ||
+////                            fileName.equals("NumberGenerator.java") || fileName.equals("FixedNumberGenerator.java")) {
+//                        System.out.println("File: [" + cu.getStorage().get().getPath() + "]");
+//                        convertService.visit(cu);
+//                    }
 
-                    //outputService.dotPrinter(fileName, cu);
+                    outputService.dotPrinter(fileName, cu);
                 }
             }
             //saveSourceCodesInOutputDir(sourceRoot);
 
         }
-        convertService.visitVariablesAndBuildClassId();
-        convertService.visitMethodsAndBuildClassId();
+//        convertService.visitVariablesAndBuildClassId();
+//        convertService.visitMethodsAndBuildClassId();
 
-        // 출력
-        System.out.println(convertService.getBlockDTOList());
-        System.out.println(convertService.getPackageDTOList());
-        System.out.println(convertService.getImportDTOList());
-        System.out.println(convertService.getClassDTOList());
+//        // 출력
+//        System.out.println(convertService.getBlockDTOList());
+//        System.out.println(convertService.getPackageDTOList());
+//        System.out.println(convertService.getImportDTOList());
+//        System.out.println(convertService.getClassDTOList());
+//
+//        System.out.println(convertService.getMemberVariableDeclarationDTOList());
+//        System.out.println(convertService.getStmtVariableDeclarationDTOList());
+//
+//        System.out.println(convertService.getMethodDeclarationDTOList());
+//        System.out.println(convertService.getMethodCallExprDTOList());
 
-        System.out.println(convertService.getMemberVariableDeclarationDTOList());
-        System.out.println(convertService.getStmtVariableDeclarationDTOList());
-
-        System.out.println(convertService.getMethodDeclarationDTOList());
-        System.out.println(convertService.getMethodCallExprDTOList());
-
-        convertService.clear();
+//        convertService.clear();
     }
 
     private static void saveSourceCodesInOutputDir(SourceRoot sourceRoot) {

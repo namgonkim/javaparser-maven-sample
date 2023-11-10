@@ -2,7 +2,9 @@ package com.tmax.ast.service;
 
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.Node;
+import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.Parameter;
+import com.github.javaparser.ast.stmt.ReturnStmt;
 import com.tmax.ast.dto.*;
 import com.tmax.ast.service.management.*;
 import javassist.bytecode.analysis.ControlFlow;
@@ -138,6 +140,11 @@ public class ConvertService {
         }
         else if(nodeType.equals("BlockStmt")) {
             blockDTO = blockService.buildBlock(blockId++, parentBlockDTO.getDepth() + 1, parentBlockDTO.getBlockId(), nodeType, node);
+        }
+        else if(nodeType.equals("ReturnStmt")) {
+            blockDTO = parentBlockDTO;
+            ReturnStmt returnStmt = (ReturnStmt) node;
+            System.out.println(returnStmt.getExpression());
         }
         else {
             blockDTO = parentBlockDTO;

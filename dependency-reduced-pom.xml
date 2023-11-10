@@ -19,11 +19,26 @@
               <transformers>
                 <transformer>
                   <mainClass>com.tmax.ast.ProjectParser</mainClass>
+                  <manifestEntries>
+                    <Main-Class>${project.build.mainClass}</Main-Class>
+                    <Specification-Title>${project.artifactId}</Specification-Title>
+                    <Specification-Version>${project.version}</Specification-Version>
+                    <Implementation-Title>${project.artifactId}</Implementation-Title>
+                    <Implementation-Version>${project.version}</Implementation-Version>
+                    <Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
+                  </manifestEntries>
                 </transformer>
               </transformers>
             </configuration>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>11</source>
+          <target>11</target>
+        </configuration>
       </plugin>
     </plugins>
   </build>
